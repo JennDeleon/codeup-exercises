@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 //        int i = 5;
@@ -44,6 +46,29 @@ public class ControlFlowExercises {
                 System.out.println("Buzz");
 
             }
+        }
+//        What number would you like to go up to? 5
+//
+//        Here is your table!
+//
+//                number | squared | cubed
+//                ------ | ------- | -----
+//                1      | 1       | 1
+//                2      | 4       | 8
+//                3      | 9       | 27
+//                4      | 16      | 64
+//                5      | 25      | 125
+        Scanner sq = new Scanner(System.in);
+
+        System.out.println("What number do you want to go up to?");
+        int UserInput = sq.nextInt();
+        System.out.println();
+        for (int i = 1; i <= UserInput; i++) {
+            System.out.format("%-6d", i);
+            System.out.print(" | ");
+            System.out.format("%-7d", i * i);
+            System.out.print(" | ");
+            System.out.println(i * i * i);
         }
     }
 }
