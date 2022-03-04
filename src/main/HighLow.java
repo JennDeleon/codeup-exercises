@@ -20,14 +20,16 @@ public class HighLow {
      do {
          if (guess > randomInt) {
              System.out.println("you guessed to high!");
+             input.nextLine();
          } else if (guess < randomInt) {
              System.out.println("you guessed too low!");
+             input.nextLine();
 //             ^^^^ infinite loop
          } else if (guess == randomInt) {
              System.out.println("you win this round.....");
          } else {
              System.out.println("that wasn't a number.....");
          }
-     } while (input.hasNext());
+     } while (!input.hasNextInt());
     }
 }

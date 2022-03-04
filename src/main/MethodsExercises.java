@@ -12,6 +12,7 @@ public class MethodsExercises {
 
 
 
+
 //        getInteger();
     }
     public static int addition (int x, int y){
