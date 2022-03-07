@@ -12,7 +12,7 @@ public class HighLow {
         //Generate random int value from 1 to 100
         int randomInt = (int) Math.floor(Math.random() * (max - min + 1) + min);
         System.out.println("Let's play a game. Guess my number between 1 and 100:");
-        System.out.println(randomInt);
+//        System.out.println(randomInt);
 //         ^^^^ prints the random number
 
         int guess = input.nextInt();
@@ -28,7 +28,7 @@ public class HighLow {
          } else if (guess == randomInt) {
              System.out.println("you win this round.....");
          } else {
-             System.out.println("that wasn't a number.....");
+             System.out.println(randomInt);
          }
      } while (!input.hasNextInt());
     }
