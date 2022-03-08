@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Bob {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
-//        System.out.println(userInput);
 
         System.out.print("Talk to moody Bob:");
 
@@ -24,7 +23,7 @@ public class Bob {
 
         do {
             String userInput = input.nextLine().trim();
-//            System.out.println(userInput);
+            System.out.println(userInput);
             if (userInput.contains("!")) {
                 System.out.println(ChillOut);
             } else if (userInput.equals("")) {
