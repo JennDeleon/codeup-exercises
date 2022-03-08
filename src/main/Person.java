@@ -28,11 +28,28 @@ public class Person {
 //    tests the above methods.
 
     public static void main(String[] args){
-        Person person1 = new Person("Jennifer");
-        System.out.println(person1.getName());
-        person1.sayHello();
-        person1.setName("Deleon");
-        System.out.println(person1.getName());
-        person1.sayHello();
+        Person person3 = new Person("Jennifer");
+        System.out.println(person3.getName());
+        person3.sayHello();
+        person3.setName("Deleon");
+        System.out.println(person3.getName());
+        person3.sayHello();
+
+//        Person person1 = new Person("John");
+//        Person person2 = new Person("John");
+//        System.out.println(person1.getName().equals(person2.getName()));
+//        System.out.println(person1 == person2);
+
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1 == person2);
+
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName());
+//        person2.setName("Jane");
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName());
     }
 }
