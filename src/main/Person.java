@@ -27,7 +27,7 @@ public class Person {
 //    Create a `main` method on the class that creates a new `Person` object and
 //    tests the above methods.
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Person person3 = new Person("Jennifer");
         System.out.println(person3.getName());
         person3.sayHello();
