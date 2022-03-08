@@ -8,6 +8,6 @@ public class InputTest {
 
         System.out.println(newInput.getInt(1, 10));
         System.out.println(newInput.getDouble(1.34325, 4.6575));
-        System.out.println(newInput.yesNo());
+        System.out.println(newInput.yesNo("More circles? y/n "));
     }
 }
