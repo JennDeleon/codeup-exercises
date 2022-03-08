@@ -11,9 +11,7 @@ public class MethodsExercises {
         System.out.println("modulus of 4 / 2 = " + modulus(4, 2));
 
 
-
-
-//        getInteger();
+        getInteger(1, 10);
     }
     public static int addition (int x, int y){
         return x + y;
@@ -44,9 +42,10 @@ public class MethodsExercises {
 //        }
 //    }
 public static int getInteger(int min, int max) {
+    System.out.println("Enter a number between " + min + " and " + max);
+
     Scanner sc = new Scanner(System.in);
     int userInput = sc.nextInt();
-    System.out.println("Enter a number between " + min + " and " + max);
 
     if (userInput < min || userInput > max) {
         System.out.println("That's not in-between 1 and 10...");
