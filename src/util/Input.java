@@ -1,6 +1,5 @@
 package util;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -16,7 +15,7 @@ public class Input {
         scanner = new Scanner(System.in);
     }
 
-    boolean yesNo(){
+    public boolean yesNo(String s){
         System.out.println("Enter yes or no");
 
         String yes = getString().toLowerCase();
@@ -47,14 +46,12 @@ public class Input {
     }
 
 
-    double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         System.out.println("Enter another number between " + min + " and " + max);
 //        defining userInput from scanner
         double userInput = scanner.nextDouble();
 //        reading in the leftover new line character
         scanner.nextLine();
-
-
 //        looping to keep prompting the user for correct input
         while (userInput < min || userInput > max) {
             System.out.println("Enter a number between " + min + " and " + max);
