@@ -1,6 +1,7 @@
 package shapes;
 
 public class Circle {
+
     private static int numCircles = 0;
 
     private double radius;
