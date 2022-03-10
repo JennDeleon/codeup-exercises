@@ -1,12 +1,3 @@
-package main;
-
-public class Practice {
-
-    public static void main(String[] args) {
-        System.out.println("HELLO, IM LIKE CONSOLE.LOG");
-    }
-
-}
 
 /*
 JAVA HAS CLASSES, WHICH IS A CONTAINER FOR THE RELATED METHODS.
@@ -65,10 +56,77 @@ PUBLIC CLASS MAIN {
 }
 
 -------------------------------------------------
-SHORTHCUT: TYPE IN sout AND ENTER TO GET System.out.println();
+SHORTCUT: TYPE IN sout AND ENTER TO GET System.out.println();
 System.out.println() IS BASICALLY JAVA'S VERSION OF JS'S CONSOLE.LOG
 IT PRINTS YOUR STRING MESSAGE TO THE TERMINAL.
 
 
 
  */
+
+package main;
+
+public class Practice {
+
+    public static void main(String[] args) {
+
+        int youtubeViews = 123_456_789;
+
+        System.out.println("HELLO, IM LIKE A CONSOLE.LOG, BUT I PRINT IN THE TERMINAL");
+        System.out.println(youtubeViews);
+    }
+
+}
+
+/*
+
+JAVA VARIABLES ARE DEFINED BY TYPE SIMPLY BY JUST WRITING OUT THE TYPE:
+STRING
+INT
+DOUBLE (used for decimals)
+CHAR
+BOOLEAN
+
+EX:
+int yourAge = 100;
+String greeting = "hello";
+
+----------------   PRIMITIVE AND REFERENCE TYPES     -------------------
+PRIMITIVE TYPES STORE SIMPLE VALUES:
+THE MORE BYTES WE HAVE, THE LARGER NUMBER WE CAN STORE
+
+TYPE       |        BYTES        |    RANGE
+
+BYTE       |           1             [-128, 127]
+----------------------------------------------------
+SHORT      |           2             [-32K, 32K]
+----------------------------------------------------
+INT        |           4             [-2B, 2B]
+----------------------------------------------------
+LONG       |           8
+----------------------------------------------------
+FLOAT      |           4
+----------------------------------------------------
+DOUBLE     |           8
+----------------------------------------------------
+CHAR       |           2            STORES SINGLE CHARACTER EX A, B, C
+                                    SUPPORTS INTERNATIONAL LETTERS
+----------------------------------------------------
+BOOLEAN    |           1                TRUE/FALSE
+
+
+IF YOU ARE WORRIED ABOUT THE AMOUNT OF MEMORY YOUR CODE WILL TAKE UP, LOOK AT THE BYTES THAT WILL BE USED
+EX INT WILL TAKE 4 BYTES & HAS LARGER RANGE, BUT BYTE ONLY TAKES UP 1 BYTE, SO YOU CAN USE
+BYTE INSTEAD OF INT WHEN WORKING WITH VERY SMALL NUMBERS (BETWEEN -128 & 127).
+
+EX:
+byte age = 100;
+int youtubeViews = 123456789
+
+IF YOU WANT YOUR NUMBERS TO BE MORE READABLE, YOU CAN SEPARATE YOUR NUMBERS BY UNDERSCORE
+EVERY 3 NUMBERS IN JAVA
+
+int youtubeViews = 123_456_789
+
+
+*/
