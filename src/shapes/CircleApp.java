@@ -21,11 +21,6 @@ public class CircleApp {
     }
 
     private static void doACircle(Input input) {
-//        double radius = input.getDouble("Enter circle radius: ");
-//        Circle circle = new Circle(radius);
         Circle.setNumCircles(Circle.getNumCircles() + 1);
-
-//        System.out.printf("Area of circle with radius %f is %f\n", radius, circle.getArea());
-//        System.out.printf("Circumference of circle with radius %f is %f\n", radius, circle.getCircumference());
     }
 }
