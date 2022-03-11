@@ -3,6 +3,7 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Practice {
 
@@ -27,6 +28,12 @@ public class Practice {
         numbers[0] = 1;
         numbers[1] = 2;
         numbers[2] = 3;
+// *************** scanner example *********************
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me a number");
+        byte userNumber = scanner.nextByte();
+        System.out.println("You entered " + userNumber);
+// *************** scanner example *********************
 
         String[] languages = {"html", "css", "javascript", "java"};
 
@@ -506,6 +513,87 @@ public class Practice {
 
     }
 }
+
+                        --------------      SCANNERS   ----------------
+
+SCANNER IS A JAVA UTIL PACKAGE, SO WHEN USING SCANNER, MAKE SURE TO IMPORT IT.
+SCANNER CAN BE USED TO READ THE INPUT FROM THE USER.
+WHEN WRITING OUT SCANNER, WE NEED TO CREATE A NEW SCANNER OBJECT
+EX:
+
+import java.util.Scanner;
+
+public class Practice {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in); <---- inside the (),  we specify where we are reading the data from
+        }
+    }
+
+System.in IS READING THE USER INPUT FROM THE TERMINAL.
+NEXT WE SHOULD PROMPT THE USER SO THEY KNOW TO WRITE SOMETHING/WHAT TO WRITE:
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me a number");
+        }
+    }
+
+THE SCANNER OBJECT HAS A BUNCH OF DIFFERENT METHODS FOR READING DATA, AND ALL THE METHODS START WITH "next".
+EX:
+    .nextByte()  //reading a byte
+    .nextLine() //reading a line
+    .nextBoolean() // reading a boolean
+    .next()   // read only one token
+    .nextLine() //reads the entire input the user entered including white spaces
+    etc...
+
+EVERYTIME WE CALL THE NEXT METHOD, IT READS ONE TOKEN. IF WE ONLY USE THE next() METHOD, IT WILL ONLY RETURN THE
+FIRST PART OF THE USERS INPUT. AS IN, IF A USER ENTERED THEIR FIRST & LAST NAME, ONLY THE FIRST NAME WOULD BE RETURNED.
+IF WE WANT THE USERS ENTIRE INPUT RETURNED, USE THE nextLine() METHOD.
+*NOTE: THERE IS ALSO OTHER METHODS THAT ARE USEFUL WHEN READING USERS INPUT, LIKE:
+.trim()  // gets rid of users white space before and after
+
+NOW WE CALL THE NEXT METHOD AND STORE THE VALUE IN A VARIABLE:
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me a number");
+
+   //that is the new var ---->  byte userNumber = scanner.nextByte();  <---- that is the call method
+
+        byte userNumber = scanner.nextByte();
+        }
+    }
+
+NEXT WE CAN USE THE USER INPUT AND APPLY IT TO WHATEVER WE WANT, LIKE A STRING.
+THE COMPLETED CODE SHOULD LOOK LIKE:
+
+public class Practice {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me a number");
+        byte userNumber = scanner.nextByte();
+        System.out.println("You entered " + userNumber); <---- this outputs the string plus the users number
+        }
+    }
+
+IF YOU NEED TO BE ABLE TO READ THE USERS INPUT THAT CONTAINS A DECIMAL:
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me a number");
+        byte userNumber = scanner.nextDouble(); <----- changed nextByte() to nextDouble()
+        System.out.println("You entered " + userNumber);
+        }
+    }
+
+
+
 
                         -------------     ARRAYS     ----------------
 
