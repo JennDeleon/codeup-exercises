@@ -595,6 +595,9 @@ IF YOU NEED TO BE ABLE TO READ THE USERS INPUT THAT CONTAINS A DECIMAL:
         System.out.println("You entered " + userNumber);
         }
     }
+                        ---------------- ACCESS MODIFIERS -------------------
+
+
 
                 ------------------OBJECT-ORIENTED PROGRAMMING (OOP)------------------------
 
@@ -604,36 +607,27 @@ THE 4 CORE CONCEPTS (PILLARS) IN OOP
 -INHERITANCE
 -POLYMORPHISM
 
+ABSTRACTION:
+ONLY SHOWS THE NECESSARY DETAILS TO THE USER OF THE OBJECT.
+
+POLYMORPHISM:
+
+
+INHERITANCE:
+
+
 ENCAPSULATION:
 
-OOP COMBINES A GROUP OF RELATED VARIABLES (PROPERTIES) AND FUNCTIONS (METHODS) INTO ONE UNIT,
-WE CALL THAT UNIT AN OBJECT. THAT IS CALLED ENCAPSULATION.
+ENCAPSULATION IS THE PROCESS OF WRAPPING DATA AND METHODS INTO A SINGLE UNIT. THE VARIABLES OF A CLASS WILL BE HIDDEN FROM
+OTHER CLASSES, AND CAN BE ACCESSED ONLY THROUGH THE METHODS OF THEIR CURRENT CLASS. IT IS ALSO KNOWN AS DATA HIDING.
+MAKE SURE TO SET THOSE CLASSES TO PRIVATE.
+EX:
+    public class Practice {
 
-PROCEDURAL IMPLEMENTATION:
 
-    let salary = 100_000;
-    let overtime = 20;
-    let rate = 30;
 
-    function getWage(salary, overtime, rate) {
-        return salary + (overtime * rate);
-    }
 
-THE ABOVE CODE USING OOP ENCAPSULATION:
 
-let bob = {
-   ----------------------
-   | salary: 100_000,   |
-   | overtime: 20,      |   < ------------------------------------------------------------------|
-   | rate: 30,          |                                                                       |
-   |____________________|                                                                       |
-    getWage: function() {  <---the function has no parameters bc the parameters are modeled as properties of this object
-    return this.baseSalary + (this.overtime * this.rate);
-    }
-};
-employee.getWage();
-
-ABSTRACTION:
 
 
                         -------------     ARRAYS     ----------------
