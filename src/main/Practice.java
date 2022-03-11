@@ -82,7 +82,7 @@ JAVA HAS CLASSES, WHICH IS A CONTAINER FOR THE RELATED METHODS.
 A METHOD IS A FUNCTION THAT IS PART OF A CLASS.
 WHEN A FUNCTION EXISTS OUTSIDE A CLASS, JUST CALL IT A FUNCTION.
 
-            ------------      BASIC ANATOMY     ----------
+                    ------------      BASIC ANATOMY     ----------
 
 
 WE USE CLASSES TO ORGANIZE OUR CODE.
@@ -136,14 +136,14 @@ CAN ACCESS THESE CLASSES/METHODS.
 
 EX: PUBLIC, PRIVATE, PROTECTED, DEFAULT
 
-------------------   VERY BASIC EXAMPLE OF A PUBLIC VOID JAVA METHOD   ----------------
+    ------------------   VERY BASIC EXAMPLE OF A PUBLIC VOID JAVA METHOD   ----------------
 
 
-PUBLIC CLASS MAIN {
-    PUBLIC STATIC VOID MAIN(STRING[] ARGS) {
-        ...
-     }
-}
+        PUBLIC CLASS MAIN {
+            PUBLIC STATIC VOID MAIN(STRING[] ARGS) {
+                ...
+             }
+        }
 
 -------------------------------------------------
 
@@ -151,7 +151,6 @@ SHORTCUT: TYPE IN sout AND ENTER TO GET System.out.println();
 System.out.println() IS BASICALLY JAVA'S VERSION OF JS'S CONSOLE.LOG
 IT PRINTS YOUR STRING MESSAGE TO THE TERMINAL.
 
----------------------------------------------------
 
 JAVA VARIABLES ARE DEFINED BY TYPE SIMPLY BY JUST WRITING OUT THE TYPE:
 STRING
@@ -170,32 +169,35 @@ String greeting = "hello";
 
 EX:
 
-String message = "Hello \"user\""; <-------- this will print out     Hello "user"
+    String message = "Hello \"user\""; <-------- this will print out     Hello "user"
 
-TO AVOID ESCAPING THE DOUBLE QUOTE WHEN WORKING WITH BACKSLASHES:
+    TO AVOID ESCAPING THE DOUBLE QUOTE WHEN WORKING WITH BACKSLASHES:
 
-String message = "Here's a \\"; <------ prints out     Here's a \
+    String message = "Here's a \\"; <------ prints out     Here's a \
 
-\n IS AN ESCAPE SEQUENCE USED TO ADD A NEW LINE
-\t TO ADD TABS
+    \n IS AN ESCAPE SEQUENCE USED TO ADD A NEW LINE
+    \t TO ADD TABS
 
 
             --------------     ARITHMETIC EXPRESSIONS     --------------
+
 REMEMBER THAT P-E-D-M-A-S APPLIES TO JAVA ARITHMETIC
 
-int addition = 10 + 3;
-System.out.println(addition);  <--- will print out 13
+BASIC MATH:
 
-int divide = 10 / 3;
-System.out.println(divide);   <------- will print out 3 which is not the exact answer
+        int addition = 10 + 3;
+        System.out.println(addition);  <--- will print out 13
 
-TO FIX THIS, WE NEED TO PREFIX THE OPERANDS WITH DOUBLE, AND CHANGE "INT" TO "DOUBLE".
+        int divide = 10 / 3;
+        System.out.println(divide);   <------- will print out 3 which is not the exact answer
 
-double divide = (double)10 / (double)3;
-System.out.println(divide);    <----- this will print out 3.333333335
+TO FIX THE ABOVE SECOND EXAMPLE, WE NEED TO PREFIX THE OPERANDS WITH DOUBLE, AND CHANGE "INT" TO "DOUBLE".
+
+        double divide = (double)10 / (double)3;
+        System.out.println(divide);    <----- this will print out 3.333333335
 
 
-YOU CAN USE THE INCREMENTER AND DECREMENT OPERATOR AS WELL
+YOU CAN USE THE INCREMENT AND DECREMENT OPERATOR AS WELL
 
 EX:
     int x = 1;
@@ -229,8 +231,88 @@ EX:
     double pi = 3.14159;
     int almostPi = (int) pi;
 
-IN THE ABOVE EXAMPLE WE ARE GOING FROM A double TO AN int.. THIS IS ALSO CALLED NARROWING CONVERSION.
+IN THE ABOVE EXAMPLE WE ARE GOING FROM A double TO AN int. THIS IS ALSO CALLED NARROWING CONVERSION.
 
+ANOTHER OF IMPLICIT CASTING EX:
+
+    public class Practice {
+
+        public static void main(String[] args) {
+
+        //Automatic conversion happening below
+       //The short is being converted to an int
+
+            short x = 1.1;
+            int y = (int)x + 2;
+            System.out.println(y);
+        }
+    }
+
+IMPLICIT CASTING EX IF WE ARE WORKING WITH FLOATING POINT NUMBERS:
+
+    public class Practice {
+
+        public static void main(String[] args) {
+
+        // we changed the below int to a double as int is not as precise because int
+        //does not return decimals.
+
+            double x = 1.1;
+            double y = x + 2;
+            System.out.println(y);  <---- prints out 3.1
+        }
+    }
+
+IMPLICIT CASTING HAPPENS WHEN THERE IS NO CHANCE FOR DATA LOSE.
+
+EXPLICIT CASTING IF WE DON'T CARE ABOUT THE DECIMAL:
+
+        public class Practice {
+
+        public static void main(String[] args) {
+            double x = 1.1;
+
+            // if we keep the next line as just
+            // int y = x + 2;
+            //we will get an error, so we need to EXPLICITLY cast the result
+            //by casting x to an int
+
+            int y = (int)x + 2;
+            System.out.println(y);  <---- prints out 3
+        }
+    }
+
+NUMERICAL CASTING:  BYTE > SHORT > INT > LONG > FLOT > DOUBLE
+
+IMPLICIT CASTING CAN ONLY HAPPEN WITH COMPATIBLE TYPES.
+EX: WE CAN'T CAST A STRING TO A NUMBER DIRECTLY.
+TO DO SO, WE CEN USE parseInt(), parseShort, parseFloat etc.
+
+EXAMPLE IF I WANT TO CAST A STRING TO AN INT:
+
+        public static void main(String[] args) {
+
+            String x = "1";
+
+            // now we need to use a wrapper class
+
+            int y = Integer.parseInt(x) + 2;
+            System.out.println(y);  <---- prints out 3
+        }
+    }
+
+EXAMPLE IF I WANT TO CAST A STRING THAT'S A FLOATING POINT NUMBER TO AN INT:
+
+        public static void main(String[] args) {
+
+            String x = "1.1";
+            // changed all int to double
+            // and we need to use a different wrapper class
+
+            double y = Double.parseDouble(x) + 2;
+            System.out.println(y);  <---- prints out 3.1
+        }
+    }
 
                 ----------------   PRIMITIVE TYPES     -------------------
 
@@ -262,7 +344,7 @@ BOOLEAN               1                TRUE/FALSE
 
 
 
-IF YOU ARE WORRIED ABOUT THE AMOUNT OF MEMORY YOUR CODE WILL TAKE UP, LOOK AT THE BYTES THAT WILL BE USED
+IF YOU ARE WORRIED ABOUT MEMORY AND PROCESSING TIME YOUR CODE WILL TAKE UP, LOOK AT THE BYTES THAT WILL BE USED
 E.g. INT WILL TAKE 4 BYTES & HAS LARGER RANGE, BUT BYTE ONLY TAKES UP 1 BYTE, SO YOU CAN USE
 BYTE INSTEAD OF INT WHEN WORKING WITH VERY SMALL NUMBERS (BETWEEN -128 & 127).
 
