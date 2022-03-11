@@ -20,9 +20,14 @@ public class Practice {
 
         int [] numbers = new int[5];
 
+        int [] [] numbersTwo = new int [2] [3];
+        numbersTwo [0] [0] =1;
+
         numbers[0] = 1;
         numbers[1] = 2;
         numbers[2] = 3;
+
+        String[] languages = {"html", "css", "javascript", "java"};
 
         System.out.println("HELLO, IM LIKE A CONSOLE.LOG, BUT I PRINT IN THE TERMINAL");
         System.out.println(youtubeViews);
@@ -38,7 +43,30 @@ public class Practice {
         System.out.println(message);
 
         System.out.println(Arrays.toString(numbers));
+        System.out.println(Arrays.deepToString(numbersTwo));
 
+        System.out.println(languages[2]);
+        System.out.println(Arrays.toString(languages));
+
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        for (int[] row : matrix) {
+            System.out.println("+---+---+---+");
+
+            System.out.print("| ");
+
+            for (int n : row) {
+                System.out.print(n + " | ");
+            }
+
+            System.out.println();
+        }
+
+        System.out.println("+---+---+---+");
 
 
     }
@@ -333,6 +361,61 @@ THEN WE CAN:
 THE OTHER NUMBERS RETURNED AS 0'S BECAUSE I LEFT THEM UNDEFINED.
 IF I HAD A BOOLEAN ARRAY, ALL ITEMS DEFAULT TO FALSE.
 IF I HAD A STRING ARRAY, ALL ITEMS DEFAULT TO AN EMPTY STRING.
+
+
+            -----------------   NEWER SYNTAX FOR INITIALIZING AN ARRAY   ---------------
+
+IF YOU ALREADY KNOW THE ITEMS AHEAD OF TIME, YOU CAN WRITE LIKE THIS:
+
+int [] numbers = { 3, 2, 5, 4};
+
+System.out.println(Arrays.toString(numbers.length))   <----- this will print 4
+JAVA ARRAYS HAVE A FIXED LENGTH, WE CAN NOT ADD OR REMOVE ITEMS.
+
+System.out.println(Arrays.sort); <------ prints out [2, 3, 4, 5]
+
+
+            ---------------   MULTI DIMENSIONAL ARRAYS   ------------
+
+EX:
+WE CAN CREATE A 2-DIMENSIONAL ARRAY TO STORE A MATRIX (RECTANGULAR ARRAY) AND A 3-DIMENSIONAL
+ARRAY TO STORE DATA FOR A CUBE.
+
+YOU CAN WRITE A 2-DIMENSIONAL ARRAY LIKE THIS:
+
+        int [] [] numbersTwo = new int [2] [3]; <------- 2 ROWS, 3 COLUMNS
+
+        numbersTwo [0] [0] = 1; <------- ACCESSING THE INDEX OF THE ROW AND THE FIRST COLUMN
+
+IF YOU WRITE THE SOUT LIKE THIS:
+        System.out.println(Arrays.toString(numbersTwo);    <------ this will print out that weird location again
+
+INSTEAD, WRITE IT LIKE THIS:
+        System.out.println(Arrays.deepToString(numbersTwo)); < ------ this will now print out [[1, 0, 0]] , [0, 0, 0]]
+
+"deep" IS USED TO PRINT MULTI-DIMENSIONAL ARRAYS;.
+
+USING THE CURLY BRACE SYNTAX FOR THESE ARRAYS :
+        int [] [] numbersTwo = { {1, 2, 3}, 4, 5, 6 };   <------ this still prints two rows with 3 columns
+        System.out.println(Arrays.deepToString(numbersTwo));
+
+******    AN EVEN CLEANER WAY TO WRITE USING CURLY BRACES:
+
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+IF YOUR ARRAY IS A STRING ARRAY, YOU DON'T NEED TO USE THE ".deepToString":
+EX:
+        String[] languages = {"html", "css", "javascript", "java"};
+        System.out.println(Arrays.toString(languages)); <----- will print out [html, css, javascript, java]
+
+YOU CAN ALSO CALL BY INDEX.
+EX:
+        System.out.println(languages[2]);   <---- prints out javascript
+
+
 
 
 
