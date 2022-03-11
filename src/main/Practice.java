@@ -548,7 +548,11 @@ EX:
     .nextBoolean() // reading a boolean
     .next()   // read only one token
     .nextLine() //reads the entire input the user entered including white spaces
+    .nextLong() //returns the next int token
+    .nextFloat() // returns the next token as a float
     etc...
+  ****      void close () // closes the scanner
+
 
 EVERYTIME WE CALL THE NEXT METHOD, IT READS ONE TOKEN. IF WE ONLY USE THE next() METHOD, IT WILL ONLY RETURN THE
 FIRST PART OF THE USERS INPUT. AS IN, IF A USER ENTERED THEIR FIRST & LAST NAME, ONLY THE FIRST NAME WOULD BE RETURNED.
@@ -592,7 +596,44 @@ IF YOU NEED TO BE ABLE TO READ THE USERS INPUT THAT CONTAINS A DECIMAL:
         }
     }
 
+                ------------------OBJECT-ORIENTED PROGRAMMING (OOP)------------------------
 
+THE 4 CORE CONCEPTS (PILLARS) IN OOP
+-ENCAPSULATION
+-ABSTRACTION
+-INHERITANCE
+-POLYMORPHISM
+
+ENCAPSULATION:
+
+OOP COMBINES A GROUP OF RELATED VARIABLES (PROPERTIES) AND FUNCTIONS (METHODS) INTO ONE UNIT,
+WE CALL THAT UNIT AN OBJECT. THAT IS CALLED ENCAPSULATION.
+
+PROCEDURAL IMPLEMENTATION:
+
+    let salary = 100_000;
+    let overtime = 20;
+    let rate = 30;
+
+    function getWage(salary, overtime, rate) {
+        return salary + (overtime * rate);
+    }
+
+THE ABOVE CODE USING OOP ENCAPSULATION:
+
+let bob = {
+   ----------------------
+   | salary: 100_000,   |
+   | overtime: 20,      |   < ------------------------------------------------------------------|
+   | rate: 30,          |                                                                       |
+   |____________________|                                                                       |
+    getWage: function() {  <---the function has no parameters bc the parameters are modeled as properties of this object
+    return this.baseSalary + (this.overtime * this.rate);
+    }
+};
+employee.getWage();
+
+ABSTRACTION:
 
 
                         -------------     ARRAYS     ----------------
