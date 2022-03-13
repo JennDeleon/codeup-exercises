@@ -123,7 +123,7 @@ EVERY JAVA PROGRAM NEEDS A MAIN METHOD. THIS IS THE ENTRY POINT FOR OUR PROGRAM.
 EVERY TIME WE EXECUTE OUR PROGRAM, THE MAIN METHOD IS CALLED AND THE CODE IN THE MAIN
 METHOD IS EXECUTED.
 
-              -------------------    STATEMENTS --------------------
+                      -------------------    STATEMENTS --------------------
 
 MAKE SURE TO END EVERY STATEMENT WITH A ";"
 STATEMENTS CAN BE GROUPED AS BLOCKS INSIDE CURLY BRACES { }
@@ -289,7 +289,7 @@ EXPLICIT CASTING IF WE DON'T CARE ABOUT THE DECIMAL:
         }
     }
 
-NUMERICAL CASTING:  BYTE > SHORT > INT > LONG > FLOT > DOUBLE
+NUMERICAL CASTING:  BYTE > SHORT > INT > LONG > FLOAT > DOUBLE
 
 IMPLICIT CASTING CAN ONLY HAPPEN WITH COMPATIBLE TYPES.
 EX: WE CAN'T CAST A STRING TO A NUMBER DIRECTLY.
@@ -375,6 +375,40 @@ YOU CAN USE UPPER OR LOWER CASE.
 
 SIMILARLY, WHEN USING FLOAT, BE SURE TO USE A F AT THE END. UPPER OR LOWERCASE.
 
+    ----------------------------- FORMAT SPECIFIERS  ---------------------------
+
+
+Format Specifier	Conversion Applied
+--------------------------------------------------------------
+%a %A	            Floating-point hexadecimal
+--------------------------------------------------------------
+%b %B	            Boolean
+--------------------------------------------------------------
+%c	                Character
+--------------------------------------------------------------
+%d	                Decimal integer
+--------------------------------------------------------------
+%h %H	            Hash code of the argument
+--------------------------------------------------------------
+%e %E	            Scientific notation
+--------------------------------------------------------------
+%f	                Decimal floating-point
+--------------------------------------------------------------
+%g %G	            Uses %e or %f, whichever is shorter
+--------------------------------------------------------------
+%o	                Octal integer
+--------------------------------------------------------------
+%n	                Inserts a newline character
+--------------------------------------------------------------
+%s %S	            String
+--------------------------------------------------------------
+%t %T	            Time and date
+--------------------------------------------------------------
+%x %X	            Integer hexadecimal
+--------------------------------------------------------------
+%%	                Inserts a % sign
+
+
 
         ----------------------------------------- REFERENCE TYPES  ---------------------------
                     ------------------------ALSO PACKAGES --------------------
@@ -435,6 +469,38 @@ public class Practice {
         System.out.println(today);   <------ this will print out today's date and time information
     }
 }
+        ----------------------- CLASSES AND OBJECTS ------------------
+
+CLASS - USED TO DEFINE A CUSTOM TYPE IN JAVA
+
+FIELD- A VARIABLE OR METHOD THAT BELONGS TO AN OBJECT OR CLASS.
+FIELDS ARE ACCESSED WITH THE "." OPERATOR. FIELDS BELONG TO OBJECTS, BUT CAN BE DEFINED AS BELONGING
+TO A CLASS WITH THE STATIC KEYWORD. FIELDS ARE EITHER PROPERTIES (VARIABLES) OR METHODS (FUNCTIONS).
+
+OBJECT- AN INSTANCE OF A CLASS. OBJECTS HAVE FIELDS AND METHODS, AND ARE CREATED WITH THE "new" keyword.
+
+Let's look at an example of defining a Person class and creating an instance of it:
+
+    class Person {
+        public String firstName;
+        public String lastName;
+
+        public String sayHello() {
+            return String.format("Hello from %s %s!", firstName, lastName);
+        }
+
+        public static void main(String[] args) {
+            Person rick = new Person();
+            rick.firstName = "Rick";
+            rick.lastName = "Sanchez";
+            System.out.println(rick.sayHello());
+            // prints "Hello from Rick Sanchez!"
+        }
+    }
+
+        ----------------------- STATIC VS INSTANCE ------------------
+
+
 
             ------------------   MEMORY MANAGEMENT -----------------
 
@@ -600,6 +666,9 @@ IF YOU NEED TO BE ABLE TO READ THE USERS INPUT THAT CONTAINS A DECIMAL:
 
 
                 ------------------OBJECT-ORIENTED PROGRAMMING (OOP)------------------------
+OOP IS ABOUT CREATING OBJECTS THAT CONTAIN BOTH DATA AND METHODS. IT MAKES IT POSSIBLE TO CREATE FULL REUSABLE
+APPLICATIONS WITH LESS CODE AND SHORTER DEVELEOPMENT TIME.
+
 
 THE 4 CORE CONCEPTS (PILLARS) IN OOP
 -ENCAPSULATION
@@ -607,8 +676,18 @@ THE 4 CORE CONCEPTS (PILLARS) IN OOP
 -INHERITANCE
 -POLYMORPHISM
 
+ABSTRACT CLASS: A KEYWORD THAT CAN APPLIED TO BOTH CLASSES AND METHODS WHEN YOU DEFINE THEM.
+
+
 ABSTRACTION:
 ONLY SHOWS THE NECESSARY DETAILS TO THE USER OF THE OBJECT.
+AN ABSTRACT CLASS IS A RESTRICTED CLASS THAT CANNOT BE USED TO CREATE OBJECTS, TO ACCESS IT, IT MUST BE
+INHERITED FROM ANOTHER CLASS.
+
+EX:
+
+
+
 
 POLYMORPHISM:
 
@@ -621,6 +700,7 @@ ENCAPSULATION:
 ENCAPSULATION IS THE PROCESS OF WRAPPING DATA AND METHODS INTO A SINGLE UNIT. THE VARIABLES OF A CLASS WILL BE HIDDEN FROM
 OTHER CLASSES, AND CAN BE ACCESSED ONLY THROUGH THE METHODS OF THEIR CURRENT CLASS. IT IS ALSO KNOWN AS DATA HIDING.
 MAKE SURE TO SET THOSE CLASSES TO PRIVATE.
+
 EX:
     public class Practice {
 
