@@ -750,7 +750,12 @@ EX:
 
 IF YOU ALREADY KNOW THE ITEMS AHEAD OF TIME, YOU CAN WRITE LIKE THIS:
 
-int [] numbers = { 3, 2, 5, 4};
+    int [] numbers = {
+          3,
+          2,
+          5,
+          4
+    };
 
 System.out.println(Arrays.toString(numbers.length))   <----- this will print 4
 JAVA ARRAYS HAVE A FIXED LENGTH, WE CAN NOT ADD OR REMOVE ITEMS.
