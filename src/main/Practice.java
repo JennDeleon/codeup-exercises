@@ -79,8 +79,18 @@ public class Practice {
 
         System.out.println("+---+---+---+");
 
+        display(1);
+        display(1, 4);
 
     }
+        private static void display(int a){
+            System.out.println("Arguments: " + a);
+        }
+
+        private static void display(int a, int b){
+            System.out.println("Arguments: " + a + " and " + b);
+        }
+
 
 }
 
@@ -686,10 +696,65 @@ INHERITED FROM ANOTHER CLASS.
 
 EX:
 
-
-
-
 POLYMORPHISM:
+THE CAPABILITY OF A METHOD TO DO DIFFERENT THINGS BASED ON THE OBJECT THAT IT IS ACTING UPON.
+
+    class Main {
+      public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        Animal myPig = new Pig();
+        Animal myDog = new Dog();
+
+        myAnimal.animalSound();  // prints out "The animal makes a sound"
+        myPig.animalSound();     // prints out "The pig says: wee wee"
+        myDog.animalSound();    // prints out "The dog says: bow wow"
+      }
+    class Animal {
+      public void animalSound() {
+        System.out.println("The animal makes a sound");
+      }
+    }
+
+    class Pig extends Animal {
+      public void animalSound() {
+        System.out.println("The pig says: wee wee");
+      }
+    }
+
+    class Dog extends Animal {
+      public void animalSound() {
+        System.out.println("The dog says: bow wow");
+      }
+    }
+
+POLYMORPHISM -OVERLOADING.
+MULTIPLE METHODS, WITH THE SAME NAME, BUT DIFFERENT PARAMETERS.
+EX:
+        public class Practice {
+                public static void main(String[] args) {
+                display(1);
+
+                display(1, 4);
+                }
+
+        private static void display(int a){
+            System.out.println("Arguments: " + a); //PRINT OUT "Arguments: 1"
+        }
+
+        private static void display(int a, int b){
+            System.out.println("Arguments: " + a + " and " + b); //PRINTS OUT "Arguments: 1 and 4"
+        }
+
+    }
+
+POLYMORPHISM -OVERRIDING.
+ANOTHER TYPE OF POLYMORPHISM IS OVERRIDING A METHOD. IT DYNAMICALLY BINDS THE METHOD FROM THE SUBCLASS IN RESPONSE TO
+A METHOD CALL FROM THE SUBCLASS OBJECT REFERENCED BY THE SUPERCLASS TYPE. THE OVERRIDING METHOD MUST HAVE THE
+SAME METHOD SIGNATURE AS THE SUPERCLASS.
+IN OTHER WORDS, OVERRIDING REPLACES THE SUPERCLASS FUNCTIONALITY ENTIRELY BY USING THE SAME METHOD NAME AND PARAMETERS.
+
+EX:
+
 
 
 INHERITANCE:
