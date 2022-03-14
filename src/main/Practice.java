@@ -699,16 +699,6 @@ EX:
 POLYMORPHISM:
 THE CAPABILITY OF A METHOD TO DO DIFFERENT THINGS BASED ON THE OBJECT THAT IT IS ACTING UPON.
 
-    class Main {
-      public static void main(String[] args) {
-        Animal myAnimal = new Animal();
-        Animal myPig = new Pig();
-        Animal myDog = new Dog();
-
-        myAnimal.animalSound();  // prints out "The animal makes a sound"
-        myPig.animalSound();     // prints out "The pig says: wee wee"
-        myDog.animalSound();    // prints out "The dog says: bow wow"
-      }
     class Animal {
       public void animalSound() {
         System.out.println("The animal makes a sound");
@@ -726,6 +716,19 @@ THE CAPABILITY OF A METHOD TO DO DIFFERENT THINGS BASED ON THE OBJECT THAT IT IS
         System.out.println("The dog says: bow wow");
       }
     }
+
+    class Main {
+      public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        Animal myPig = new Pig();
+        Animal myDog = new Dog();
+
+        myAnimal.animalSound();
+        myPig.animalSound();
+        myDog.animalSound();
+      }
+    }
+
 
 POLYMORPHISM -OVERLOADING.
 MULTIPLE METHODS, WITH THE SAME NAME, BUT DIFFERENT PARAMETERS.
