@@ -5,20 +5,15 @@ import util.Input;
 import java.util.Arrays;
 
 public class MoviesApplication {
-    // movies need to be instance variable so that addMovie can reassign the array
     private static Movie [] movies = MoviesArray.findAll();
 
     private static Input input = new Input();
 
     public static void main(String[] args) {
-        // highest level of detail for what this program is about
-        // do user choice from menu until user decides to quit
         int choice = 0;
         do {
             printMenu();
-
-            // get menu choice from user
-            choice = input.getInt("Enter your choice: ",0, 6);
+            choice = input.getInt("Enter your number choice here: ",0, 6);
 
             doUserChoice(choice, movies);
 
@@ -28,7 +23,7 @@ public class MoviesApplication {
     }
 
     private static void printMenu() {
-        System.out.println("What would you like to do?\n" +
+        System.out.println("Here is the choices you have to select from:" +
                 "\n" +
                 "0 - exit\n" +
                 "1 - view all movies\n" +
@@ -65,21 +60,17 @@ public class MoviesApplication {
     }
 
     private static void addMovie() {
-        // do add movie functionality here!
-        String movieName = input.getString("Enter movie name: ");
-        String category = input.getString("Enter movie category: ");
+
+        String movieName = input.getString("Whiich movie name? ");
+        String category = input.getString("Which movie category? ");
         Movie movie = new Movie(movieName, category);
 
-        // make a new movies array that is 1 larger than previous
         movies = Arrays.copyOf(movies, movies.length + 1);
-        // assign new movie the end of the array
         movies[movies.length - 1] = movie;
     }
 
     private static void printMovies(Movie[] movies, String category) {
         for(Movie movie: movies) {
-            // all movies or the movie matches the given category, then print it
-            // category == "" ->  is "all movies"
             if(category.length() == 0 || movie.getCategory().equalsIgnoreCase(category)) {
                 System.out.println(movie);
             }
@@ -87,6 +78,3 @@ public class MoviesApplication {
         System.out.println();
     }
 }
-
-// using this for review, need to change it to right as my own with a better understanding
-
