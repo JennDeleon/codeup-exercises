@@ -6,15 +6,16 @@ import java.util.Scanner;
 public class Input {
     private Scanner input;
 
-    public String getString(String prompt) {
-        System.out.printf("%s", prompt);
-        return input.nextLine();
-
-    }
-
     public Input() {
         input = new Scanner(System.in);
     }
+
+
+    public String getString(String prompt) {
+        System.out.printf("%s", prompt);
+        return input.nextLine();
+    }
+
 
     public boolean yesNo(String prompt) {
         System.out.printf("%s", prompt);
@@ -32,59 +33,56 @@ public class Input {
 
 
     public int getInt(String prompt) {
-        while (true) {
-            ////        prompting the user to enter an Int
-            System.out.printf("%s", prompt);
-            if (input.hasNextInt()) {
-                int result = input.nextInt();
-                input.nextLine();
-                return result;
+        do {
+            try {
+                String s = getString(prompt);
+                return Integer.valueOf(s);
+            } catch (NumberFormatException e){
+                System.out.println("Thats not an number!");
             }
-            input.nextLine();
-        }
+        } while (true);
     }
 
     public int getInt(String prompt, int min, int max) {
+
         while (true) {
             int result = getInt(prompt);
             if (result >= min && result <= max) {
                 return result;
             }
-            System.out.printf("Integer must be between %d and %d!\n", min, max);
+            System.out.println("Must be between " + min + " and " + max);
         }
     }
 
-//
-////        looping to keep prompting the user for correct input
-//            while (userInput < min || userInput > max) {
-//                System.out.println("Enter a number between " + min + " and " + max);
-////                redefining userInput with each new entry loop will break once Int is within range
-//                userInput = scanner.nextInt();
-//                scanner.nextLine();
-//
-//            }
-//                return userInput;
-//    }
 
     public double getDouble(String prompt) {
         while (true) {
             System.out.printf("%s", prompt);
-            if (input.hasNextDouble()) {
-                double result = input.nextDouble();
-                input.nextLine();
-                return result;
+//            if (input.hasNextDouble()) {
+//                double result = input.nextDouble();
+//                input.nextLine();
+//                return result;
+//            }
+//            input.nextLine();
+//        }
+//    }
+            try {
+                String aString = getString(prompt);
+                return Double.valueOf(aString);
+            } catch(NumberFormatException e) {
             }
-            input.nextLine();
         }
     }
 
-    public double getDouble(String prompt, double min, double max) {
+    public double getDouble(double min, double max, String prompt) {
         while (true) {
             double result = getDouble(prompt);
             if (result >= min && result <= max) {
                 return result;
             }
-            System.out.printf("Number must be between %f and %f!\n", min, max);
+            System.out.println("Must be in between " + min + " and " + max);
+            return getDouble(min, max, prompt);
+
         }
     }
 
