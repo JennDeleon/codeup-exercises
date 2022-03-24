@@ -1,5 +1,4 @@
 package shapes;
-
 import util.Input;
 
 public class CircleApp {
@@ -7,20 +6,21 @@ public class CircleApp {
     public static void main(String[] args) {
         Input input = new Input();
 
-        // loop until user says no more circles
         while (true) {
-            doACircle(input);
-
-            boolean moreCircles = input.yesNo("More circles? y/n ");
+            circleRadius(input);
+            boolean moreCircles = input.yesNo("More circles? type yes or no ");
             if(!moreCircles) {
                 break;
             }
         }
-
-        System.out.println("# circles created: " + Circle.getNumCircles());
+        input.close();
     }
 
-    private static void doACircle(Input input) {
+    private static void circleRadius(Input input) {
+        double radius = input.getDouble("Enter number: ");
+        Circle circle = new Circle(radius);
         Circle.setNumCircles(Circle.getNumCircles() + 1);
+        System.out.printf("The area of circle with radius %.2f is %.2f\n", radius, circle.getArea());
+        System.out.printf("And the circumference of circle with radius %.2f is %.2f\n", radius, circle.getCircumference());
     }
 }

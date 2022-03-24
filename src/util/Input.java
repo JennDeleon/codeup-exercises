@@ -19,14 +19,16 @@ public class Input {
     public boolean yesNo(String prompt) {
         System.out.printf("%s", prompt);
         String response = input.nextLine();
-
-        String yes = getString("Enter movie category: ").toLowerCase();
-
+//
+//        String yes = getString("Enter movie category: ").toLowerCase();
+        //    DON'T NEED THIS ANYMORE, AS I'M USING THIS FOR SHAPES NOW
+//
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
             return true;
         }
         return false;
     }
+
 
 
     public int getInt(String prompt) {
@@ -82,7 +84,7 @@ public class Input {
             if (result >= min && result <= max) {
                 return result;
             }
-            System.out.printf("Double must be between %f and %f!\n", min, max);
+            System.out.printf("Number must be between %f and %f!\n", min, max);
         }
     }
 
