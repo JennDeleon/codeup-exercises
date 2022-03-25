@@ -589,6 +589,25 @@ public class Practice {
 
     }
 }
+                        ----------------   TERNARY    ------------------
+
+CONDITIONAL OPERAND THAT TAKES IN 3 OPERANDS. IT REPLACES THE IF-THEN-ELSE MULTI LINE CODE WITH ONE LINE.
+
+INSTEAD OF:
+
+    int time = 20;
+        if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }
+
+WRITE:
+
+    int time = 20;
+    String result = (time < 18) ? "Good day." : "Good evening.";
+    System.out.println(result);
+
 
                         --------------      SCANNERS   ----------------
 
